@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProgHome Inscription</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('P home icone 1.png') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        table {
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="password"], select {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Inscrivez Vous</h2>
+        <form id="registrationForm">
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td><input type="text" name="nom" required></td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td><input type="text" name="prenom" required></td>
+                </tr>
+                <tr>
+                    <td>Date de naissance</td>
+                    <td>
+                        <select name="Jour" required>
+                            ${Array.from({length: 31}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="Mois" required>
+                            <option value="Janvier">Janvier</option>
+                            <option value="Février">Février</option>
+                            <option value="Mars">Mars</option>
+                            <option value="Avril">Avril</option>
+                            <option value="Mai">Mai</option>
+                            <option value="Juin">Juin</option>
+                            <option value="Juillet">Juillet</option>
+                            <option value="Août">Août</option>
+                            <option value="Septembre">Septembre</option>
+                            <option value="Octobre">Octobre</option>
+                            <option value="Novembre">Novembre</option>
+                            <option value="Decembre">Decembre</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="Année" required></td>
+                </tr>
+                <tr>
+                    <td>Adresse Email</td>
+                    <td><input type="email" name="Email" required></td>
+                </tr>
+                <tr>
+                    <td>Téléphone</td>
+                    <td>
+                        <select name="pays" required>
+                            <option value="Camerounais(e)">Cameroun</option>
+                            <option value="Francais(e)">France</option>
+                            <option value="Ivoirien(ne)">Côte d'Ivoire</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="numero" required></td>
+                </tr>
+                <tr>
+                    <td>Sexe</td>
+                    <td>
+                        Homme: <input type="radio" name="sexe" value="M" required>
+                        Femme: <input type="radio" name="sexe" value="F">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mot de passe</td>
+                    <td><input type="password" name="Mot de passe" required></td>
+                </tr>
+                <tr>
+                    <td>Justification</td>
+                    <td><input type="text" name="Justification" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Terminer">
+                        <input type="reset" value="Annuler">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const nom = form.nom.value;
+            window.location.href = `Acceuin P-Home.html?nom=${encodeURIComponent(nom)}`;
+        });
+    </script>
+</body>
+</html>
