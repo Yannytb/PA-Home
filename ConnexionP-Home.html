@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prog Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('Min.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        table {
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="password"], select {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        input[type="submit"], input[type="button"], input[type="reset"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1><u>Formulaire de recrutement</u></h1>
+        <form>
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td><input type="text" name="nom" required></td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td><input type="text" name="prenom" required></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" required></td>
+                </tr>
+                <tr>
+                    <td>Adresse Email</td>
+                    <td><input type="email" name="Email" required></td>
+                </tr>
+                <tr>
+                    <td>Téléphone</td>
+                    <td>
+                        <select name="pays">
+                            <option value="Camerounais(e)">Cameroun</option>
+                            <option value="Francais(e)">France</option>
+                            <option value="Ivoirien(ne)">Côte d'Ivoire</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="numero" required></td>
+                </tr>
+                <tr>
+                    <td>Sexe</td>
+                    <td>
+                        Homme: <input type="radio" name="sexe" value="M" required>
+                        Femme: <input type="radio" name="sexe" value="F">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Envoyer">
+                        <input type="reset" value="Annuler">
+                        <input type="button" value="Inscrivez Vous" onclick="window.location.href='InscriptionP-Home.html'">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script lang="fr-FR" type="text/javascript" src="https://botstacks.sfo3.cdn.digitaloceanspaces.com/webassistant.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            initBotStackAssistant({
+                apiKey: "xpd7e0iv4u4v2nxvpxlrc7f2",
+                botId: "c0d0b9c9-e2d8-4350-854d-073f439fca8d"
+            });
+        };
+    </script>
+</body>
+</html>
